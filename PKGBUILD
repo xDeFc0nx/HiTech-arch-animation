@@ -5,7 +5,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc="Hi-Tech Arch Linux Plymouth Theme"
 arch=('any')
-url="https://github.com/yourusername/Hi-Tech-arch-animation"
+url="https://github.com/xDeFc0nx/Hi-Tech-arch-animation"
 license=('MIT')
 depends=('plymouth')
 
