@@ -1,27 +1,55 @@
- # Nice colour on top of the screen fading to
+# Nice colour on top of the screen fading to
 #Window.SetBackgroundTopColor (0.0, 0.00, 0.0);
 
 # an equally nice colour on the bottom
 #Window.SetBackgroundBottomColor (0.0, 0.00, 0.0);
 
+global.num_images = 148; # Set to the actual number of your progress-*.png files (1 to 148)
+
 # Image animation loop
-for (i = 1; i < 200; i++)
-  flyingman_image[i] = Image("progress-" + i + ".png");
-flyingman_sprite = Sprite();
+# Declare the array
+global.flyingman_image = [];
 
-#Place in the center
-flyingman_sprite.SetX(Window.GetWidth() / 2 - flyingman_image[1].GetWidth() / 2); 
-flyingman_sprite.SetY(Window.GetHeight() / 2 - flyingman_image[1].GetHeight() / 2);
+for (i = 1; i <= num_images; i++) # Loop from 1 up to and including num_images
+  {
+    flyingman_image[i] = Image("progress-" + i + ".png");
+    if (!flyingman_image[i])
+      {
+        # Basic error display if an image fails.
+        # You could make this more visible if needed.
+        Plymouth.SetMode("text");
+        Plymouth.Message("Error: Failed to load image progress-" + i + ".png");
+        Plymouth.Quit();
+        return;
+      }
+  }
 
-progress = 1;
+# Check if any images were loaded, specifically the first one for dimensions
+if (num_images == 0 || !flyingman_image[1])
+  {
+    Plymouth.SetMode("text");
+    Plymouth.Message("Error: Could not load animation images. num_images=" + num_images);
+    Plymouth.Quit();
+    return; # Stop script execution
+  }
+
+global.flyingman_sprite = Sprite();
+
+#Place in the center (use the first loaded image for dimensions)
+flyingman_sprite.SetX(Math.Int(Window.GetWidth() / 2 - flyingman_image[1].GetWidth() / 2));
+flyingman_sprite.SetY(Math.Int(Window.GetHeight() / 2 - flyingman_image[1].GetHeight() / 2));
+
+global.progress_counter = 0; # Start progress at 0 for cleaner modulo arithmetic (renamed from 'progress' to avoid conflict if 'progress' is a keyword)
 
 fun refresh_callback ()
   {
-    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 3) % 200]);
-    progress++;
+    # Calculate the frame index:
+    # Math.Int(progress_counter / 3) ensures each image is shown for 3 "progress" ticks.
+    # % num_images will give a 0-based index (0 to num_images - 1).
+    # + 1 will convert it to a 1-based index (1 to num_images), matching our array.
+    frame_to_display = (Math.Int(progress_counter / 3) % num_images) + 1;
+    flyingman_sprite.SetImage(flyingman_image[frame_to_display]);
+    progress_counter++;
   }
-  
+
 Plymouth.SetRefreshFunction (refresh_callback);
-
-
-

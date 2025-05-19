@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=hitech-arch-animation/
+Description=arch
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/hitech-arch-animation/
+ScriptFile=/usr/share/plymouth/themes/hitech-arch-animation/animated-boot.script

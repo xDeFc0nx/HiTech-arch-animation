@@ -1,8 +1,0 @@
-[Plymouth Theme]
-Name=arch
-Description=arch
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/arch/
-ScriptFile=/usr/share/plymouth/themes/arch/animated-boot.script
