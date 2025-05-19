@@ -11,7 +11,7 @@ A Hi-Tech inspired animated Plymouth boot splash theme for Arch Linux enthusiast
 *   Designed for Arch Linux (but should work on any system with Plymouth).
 
 ## Preview
-https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTB2eTQ2bWV3ZGl2NHF2Mmgyb3ozMDl5NG12azR5azhlcmliMWJ4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CGtACqVCUDq9LEc7Mk/giphy.gif
+![Hi-Tech Arch Animation Preview](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTB2eTQ2bWV3ZGl2NHF2Mmgyb3ozMDl5NG12azR5azhlcmliMWJ4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CGtACqVCUDq9LEc7Mk/giphy.gif)
 ## Installation
 
 #
