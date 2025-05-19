@@ -1,8 +1,8 @@
 # Hi-Tech-arch-animation PKGBUILD
 
 pkgname=hitech-arch-animation
-pkgver=1.0
-pkgrel=1
+pkgver=2.0
+pkgrel=2
 pkgdesc="Hi-Tech Arch Linux Plymouth Theme"
 arch=('any')
 url="https://github.com/xDeFc0nx/HiTech-arch-animation"
